@@ -16,7 +16,7 @@ namespace ArchiveManager
 {
     public partial class Form_archmgr : Form
     {
-        private const String VERSION = "1.0.17";
+        private const String VERSION = "1.0.19";
         private const String ARCHIVE_MARKER = "ARCHIVE";
         private const String ARCHIVE_SEPARATOR = "|";
         private const String DEFAULT_FILE_EXT = "*.jpg";
