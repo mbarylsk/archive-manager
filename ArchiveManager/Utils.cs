@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Security.Cryptography;
-using System.Collections;
 using System.Data.SQLite;
 
 namespace ArchiveManager

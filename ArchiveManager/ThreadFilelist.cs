@@ -113,7 +113,7 @@ namespace ArchiveManager
         private void backgroundWorker2_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             _customProgressBar1.Value = e.ProgressPercentage;
-            _customProgressBar1.CustomText = e.ProgressPercentage + "%";
+            _customProgressBar1.MyText = e.ProgressPercentage + "%";
         }
 
         /// <summary>

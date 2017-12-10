@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.IO;
-using System.Windows.Forms;
-using System.Diagnostics;
 using System.Globalization;
 using System.Threading;
 
@@ -31,6 +23,7 @@ public enum LocalizedItem
     TextPathForQuarantine,
     TextFindDuplicates,
     TextManageArchives,
+    TextCheckFolder,
     TextPhase1Started,
     TextPhase2Started,
     TextPhase3Started,
@@ -43,6 +36,8 @@ public enum LocalizedItem
     TextScanArchives,
     TextOutputFile,
     TextThresholdPercentage,
+    TextUniqueFiles,
+    TextDuplicatesFiles,
     ErrorPathNotFound,
     ErrorFileFilterEmpty
 }
@@ -123,6 +118,9 @@ class Localization
                     case LocalizedItem.TextManageArchives:
                         value = "Zarządzaj archiwami";
                         break;
+                    case LocalizedItem.TextCheckFolder:
+                        value = "Sprawdź folder";
+                        break;
                     case LocalizedItem.TextSearchForDuplicates:
                         value = "Szukaj duplikatów:";
                         break;
@@ -167,6 +165,12 @@ class Localization
                         break;
                     case LocalizedItem.ErrorFileFilterEmpty:
                         value = "Błąd! Filtr plików jest pusty.";
+                        break;
+                    case LocalizedItem.TextUniqueFiles:
+                        value = "Pliki unikatowe";
+                        break;
+                    case LocalizedItem.TextDuplicatesFiles:
+                        value = "Pliki zduplikowane";
                         break;
                     default:
                         value = String.Empty;
@@ -230,6 +234,9 @@ class Localization
                     case LocalizedItem.TextManageArchives:
                         value = "Manage archives";
                         break;
+                    case LocalizedItem.TextCheckFolder:
+                        value = "Check folder";
+                        break;
                     case LocalizedItem.TextSearchForDuplicates:
                         value = "Search for duplicates:";
                         break;
@@ -274,6 +281,12 @@ class Localization
                         break;
                     case LocalizedItem.ErrorFileFilterEmpty:
                         value = "Error! File filter is empty";
+                        break;
+                    case LocalizedItem.TextUniqueFiles:
+                        value = "Unique files";
+                        break;
+                    case LocalizedItem.TextDuplicatesFiles:
+                        value = "Duplicated files";
                         break;
                     default:
                         value = String.Empty;

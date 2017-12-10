@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.IO;
-using System.Collections;
-using System.Threading;
 
 namespace ArchiveManager
 {
@@ -124,7 +120,7 @@ namespace ArchiveManager
         private void backgroundWorker5_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             _customProgressBar1.Value = e.ProgressPercentage;
-            _customProgressBar1.CustomText = e.ProgressPercentage + "%";
+            _customProgressBar1.MyText = e.ProgressPercentage + "%";
         }
     }
 

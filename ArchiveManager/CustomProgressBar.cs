@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.IO;
 using System.Windows.Forms;
-using System.Diagnostics;
 
 public enum ProgressBarDisplayText
 {
@@ -17,16 +10,13 @@ public enum ProgressBarDisplayText
 
 class CustomProgressBar : ProgressBar
 {
-    // Property to set to decide whether to print a % or Text
-    public ProgressBarDisplayText DisplayStyle { get; set; }
+    // print % or text
+    public ProgressBarDisplayText MyStyle { get; set; }
+    // text to be printed
+    public String MyText { get; set; }
 
-    // Property to hold the custom text
-    public String CustomText { get; set; }
-
-    public CustomProgressBar()
-    {
-        // Modify the ControlStyles flags
-        // http://msdn.microsoft.com/en-us/library/system.windows.forms.controlstyles.aspx        
+    public void GraphicsProgressBar()
+    {       
         this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw, true);
     }
 
@@ -45,7 +35,7 @@ class CustomProgressBar : ProgressBar
         }
 
         // Set the Display text (Either a % amount or our custom text
-        string text = DisplayStyle == ProgressBarDisplayText.Percentage ? Value.ToString() + '%' : CustomText;
+        string text = MyStyle == ProgressBarDisplayText.Percentage ? Value.ToString() + '%' : MyText;
 
         using (System.Drawing.Font f = new System.Drawing.Font(FontFamily.GenericSerif, 10))
         {

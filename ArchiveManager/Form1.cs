@@ -1,22 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.IO;
-using System.Security.Cryptography;
 using System.Collections;
-using System.Threading;
 using System.Data.SQLite;
 
 namespace ArchiveManager
 {
     public partial class Form_archmgr : Form
     {
-        private const String VERSION = "1.0.19";
+        private const String VERSION = "1.0.21";
         private const String ARCHIVE_MARKER = "ARCHIVE";
         private const String ARCHIVE_SEPARATOR = "|";
         private const String DEFAULT_FILE_EXT = "*.jpg";
@@ -44,7 +38,7 @@ namespace ArchiveManager
             InitializeComponent();
 
             _customProgressBar1 = new CustomProgressBar();
-            _customProgressBar1.DisplayStyle = ProgressBarDisplayText.Percentage;
+            _customProgressBar1.MyStyle = ProgressBarDisplayText.Percentage;
             _customProgressBar1.Value = 0;
             _customProgressBar1.SetBounds(100, 500, 560, 25);
             _customProgressBar1.Visible = false;
@@ -498,6 +492,17 @@ namespace ArchiveManager
                 textBox_manPathToBeScanned.BackColor = Color.Empty;
             }
             this.folderBrowserDialog_compare.Dispose();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = this.folderBrowserDialog_checkFolder_pathToBeScanned.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                textBox_checkFolder_pathToBeScanned.Text = folderBrowserDialog_checkFolder_pathToBeScanned.SelectedPath;
+                textBox_checkFolder_pathToBeScanned.BackColor = Color.Empty;
+            }
+            this.folderBrowserDialog_checkFolder_pathToBeScanned.Dispose();
         }
     }
 }

@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Forms;
 using System.IO;
-using System.Security.Cryptography;
-using System.Collections;
 using System.Drawing;
 
 namespace ArchiveManager
@@ -170,6 +166,9 @@ namespace ArchiveManager
 
             tabControl1.TabPages[0].Text = _localization.GetValueForItem(LocalizedItem.TextFindDuplicates);
             tabControl1.TabPages[1].Text = _localization.GetValueForItem(LocalizedItem.TextManageArchives);
+            tabControl1.TabPages[2].Text = _localization.GetValueForItem(LocalizedItem.TextCheckFolder);
+            tabControl_checkFolder_results.TabPages[0].Text = _localization.GetValueForItem(LocalizedItem.TextUniqueFiles);
+            tabControl_checkFolder_results.TabPages[1].Text = _localization.GetValueForItem(LocalizedItem.TextDuplicatesFiles);
 
             checkBox_selectAll.Text = _localization.GetValueForItem(LocalizedItem.TextSelectAll);
             checkBox_collapse.Text = _localization.GetValueForItem(LocalizedItem.TextExpandAll);
